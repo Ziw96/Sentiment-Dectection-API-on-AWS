@@ -7,7 +7,7 @@ import json
 
 class Preprocessor():
 
-    def __init__(self, dict_path = "dict/Glove_dict.txt", max_length_tweet=40, max_length_dictionary=100000):
+    def __init__(self, dict_path = "dict/Glove_dict.txt", max_length_tweet=40, max_length_dictionary=47506):
         module_path = os.path.abspath(__file__)
         dict_path = os.path.join(os.path.dirname(module_path), dict_path)
 
@@ -23,7 +23,6 @@ class Preprocessor():
         print(f"the max length of tweet is {self.max_length_tweet}")
         print(f"the max length of dictionary is {self.max_length_dictionary}")
         print(f"the mode is {self.mode}")
-        pass
 
     def load_corpus(self):
         if ".zip/" in self.dict_path:
@@ -41,6 +40,7 @@ class Preprocessor():
             for word in file:
                 self.corpus[idx] = word.rstrip()
                 idx += 1
+            self.corpus = self.process_dictionary(self.corpus)
             self.mode = ""
 
     def process_dictionary(self, _list):
@@ -92,14 +92,9 @@ class Preprocessor():
         # Source: https://github.com/stanfordnlp/GloVe
         # Source: https://towardsdatascience.com/word-embeddings-for-sentiment-analysis-65f42ea5d26e
 
-        if self.mode == "zip":
-            for idx, word in enumerate(tokenized_tweet):
-                if word not in self.corpus:
-                    tokenized_tweet[idx] = "<unknown>"
-        else:
-            for idx, word in enumerate(tokenized_tweet):
-                if word not in self.corpus:
-                    tokenized_tweet[idx] = "<unk>"
+        for idx, word in enumerate(tokenized_tweet):
+            if word not in self.corpus:
+                tokenized_tweet[idx] = "<unknown>"
         return [self.corpus.index(x) for x in tokenized_tweet]
 
     def pad_sequence(self, arr, max_length_tweet):
