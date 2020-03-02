@@ -3,6 +3,7 @@ Assignment 5 for IEOR4577
 
 Please see below for instructions:
 - IEOR4577 Homework5.docx: detailed steps and report
+- preprocess-new.zip: full package for developing the model lambda function
 - my_lambda_function.py: main code for calling preprocess and model modules
 - preprocess.py: preprocess file
 - dict: folder containing the essential word dictionary to run code
