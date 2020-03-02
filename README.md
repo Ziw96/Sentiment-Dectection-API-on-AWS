@@ -1,10 +1,16 @@
 # AI-OR_in_the_cloud_asg5
 Assignment 5 for IEOR4577
 
-Step 1. Create Sagemaker Inference
+Please see below for instructions:
+- IEOR4577 Homework5.docx: detailed steps and report
+- my_lambda_function.py: main code for calling preprocess and model modules
+- preprocess.py: preprocess file
+- dict: folder containing the essential word dictionary to run code
+- requirement.txt: package requirements
+- Others: files for running code and sample json log output
 
 
-Call API:
-link:  https://cevxerp424.execute-api.us-west-2.amazonaws.com/v1 
+API link: https://cevxerp424.execute-api.us-west-2.amazonaws.com/v1 
 
-curl -X POST https://cevxerp424.execute-api.us-west-2.amazonaws.com/v1/predict --header "Content-Type:application/json" --data '{"tweet": "I love apple"}'
+Call API method:
+curl -X POST https://cevxerp424.execute-api.us-west-2.amazonaws.com/v1/predict --header "Content-Type:application/json" --data '{"tweet": "I love apples"}'
