@@ -15,3 +15,5 @@ API link: https://cevxerp424.execute-api.us-west-2.amazonaws.com/v1
 
 Call API method:
 curl -X POST https://cevxerp424.execute-api.us-west-2.amazonaws.com/v1/predict --header "Content-Type:application/json" --data '{"tweet": "I love apples"}'
+
+Sample Payload log info: https://sentimentlog.s3-us-west-2.amazonaws.com/015ca6008c0b4c13b929067b1e13ce68
