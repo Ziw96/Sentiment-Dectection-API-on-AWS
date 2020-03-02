@@ -7,7 +7,7 @@ import json
 
 class Preprocessor():
 
-    def __init__(self, dict_path = "dict/Glove_dict.txt", max_length_tweet=40, max_length_dictionary=100000):
+    def __init__(self, dict_path = "dict/Glove_dict.txt", max_length_tweet=40, max_length_dictionary=47506):
         module_path = os.path.abspath(__file__)
         dict_path = os.path.join(os.path.dirname(module_path), dict_path)
 
