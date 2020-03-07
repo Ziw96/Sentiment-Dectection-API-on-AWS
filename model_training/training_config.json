@@ -1,0 +1,11 @@
+{
+    "embeddings_dictionary_size": 47506,
+    "embeddings_vector_size": 25,
+    "padding_size": 40,
+    "batch_size": 100,
+    "embeddings_path": "dict/glove_vector.txt",
+    "input_tensor_name": "features_input",
+    "embedding_layer_name": "features",
+    "bucket": "asg4",
+    "cloud": 0
+}
