@@ -16,9 +16,6 @@ def keras_model_fn(_, config):
 
     """
 
-    # https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html
-    model = tf.keras.models.Sequential()
-
     embedding_matrix = np.zeros((config["embeddings_dictionary_size"], config["embeddings_vector_size"]))
     index = 0
     if config["cloud"] == 0:
@@ -42,6 +39,9 @@ def keras_model_fn(_, config):
             else:
                 embedding_matrix[index, :] = word_vector.split()[1:]
             index += 1
+
+    # https://blog.keras.io/using-pre-trained-word-embeddings-in-a-keras-model.html
+    model = tf.keras.models.Sequential()
 
     # https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding
     model.add(tf.keras.layers.Embedding(input_length=config["padding_size"],
