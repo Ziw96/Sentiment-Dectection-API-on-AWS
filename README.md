@@ -1,4 +1,4 @@
-# AI-OR_in_the_cloud_asg5
+# AI-OR_in_the_cloud: Text Sentiment API
 Assignment 5 for IEOR4577
 
 Please see below for instructions:
